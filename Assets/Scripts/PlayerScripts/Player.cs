@@ -1,14 +1,19 @@
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class Player : MonoBehaviour
 {
-    public float speed ;
-    public float maxDistance = 5f;  
+    private Rigidbody2D rb;
 
+    //Player Movement
+    [SerializeField]
+    private float speed ;
+    [SerializeField]
+    private float maxDistance = 5f;
     private Vector3 startPosition;
 
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         // Record the starting position
         startPosition = transform.position;
     }
@@ -31,5 +36,12 @@ public class PlayerMovement : MonoBehaviour
             // Move if Allowed
             transform.position = newPosition;
         }
+    }
+
+    // Allow speed to be accessible to other classes
+    public float Speed
+    {
+        get { return speed; }
+        set { speed = value; }
     }
 }
