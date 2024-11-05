@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class ObjectsFlyingBy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+    [SerializeField]
+    [Range(0f, 10f)]
+    private float speed = 1.0f;
+    
     void Update()
     {
-        
+        transform.position += Vector3.left * speed * Time.deltaTime;
+
+        if(transform.position.x <-10f)
+        {
+            Destroy(gameObject);
+        }
     }
 }
