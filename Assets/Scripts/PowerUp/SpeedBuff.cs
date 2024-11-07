@@ -6,10 +6,14 @@ using UnityEngine;
 
 public class Speed : PowerUpEffect
 {
-    public float amount;
+    public int amount;
     public override void Apply(GameObject target)
     {
-       Player playerMovement = target.GetComponent<Player>();
-       playerMovement.Speed += amount;
+       AttributeManager speed = target.GetComponent<AttributeManager>();
+        if (speed != null)
+        {
+            speed.setSpeed(amount);
+        }
+        
     }
 }

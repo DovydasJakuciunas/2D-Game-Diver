@@ -4,16 +4,17 @@ public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
 
-    //Player Movement
-    [SerializeField]
-    private float speed ;
+    //Max Distance
     [SerializeField]
     private float maxDistance = 5f;
     private Vector3 startPosition;
 
+    AttributeManager player;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        player = GetComponent<AttributeManager>();
         // Record the starting position
         startPosition = transform.position;
     }
@@ -25,7 +26,7 @@ public class Player : MonoBehaviour
         float moveVertical = Input.GetAxis("Vertical");
 
         // Movement Getter
-        Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0) * speed * Time.deltaTime;
+        Vector3 movement = player.getSpeed() * Time.deltaTime * new Vector3(moveHorizontal, moveVertical, 0);
 
         // Move the Character
         Vector3 newPosition = transform.position + movement;
@@ -36,12 +37,7 @@ public class Player : MonoBehaviour
             // Move if Allowed
             transform.position = newPosition;
         }
+       
     }
 
-    // Allow speed to be accessible to other classes
-    public float Speed
-    {
-        get { return speed; }
-        set { speed = value; }
-    }
 }
