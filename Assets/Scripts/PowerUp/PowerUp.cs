@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PowerUp : MonoBehaviour
@@ -8,6 +6,7 @@ public class PowerUp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Once the tag "Player" hits object its deleted
         if (collision.tag == "Player")
         {
             powerupEffect.Apply(collision.gameObject);

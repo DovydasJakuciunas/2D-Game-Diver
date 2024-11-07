@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Powerups/speedUp")]
@@ -7,8 +5,11 @@ using UnityEngine;
 public class Speed : PowerUpEffect
 {
     public int amount;
+
+    //Overrides method to its own apply
     public override void Apply(GameObject target)
     {
+        //Get things from attributeManager for speed and uses it
        AttributeManager speed = target.GetComponent<AttributeManager>();
         if (speed != null)
         {

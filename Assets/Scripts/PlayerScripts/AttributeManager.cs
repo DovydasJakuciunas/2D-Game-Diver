@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AttributeManager : MonoBehaviour
@@ -10,10 +7,11 @@ public class AttributeManager : MonoBehaviour
 
     [SerializeField]
     protected int playerSpeed =5;
-    
+
+
     public void setSpeed(int speed)
     {
-          playerSpeed += speed;
+        playerSpeed += speed;
     }
     public int getSpeed() { return playerSpeed; }
 

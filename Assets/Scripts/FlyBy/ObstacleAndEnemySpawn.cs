@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,6 +14,7 @@ public class ObstacleAndEnemySpawn : MonoBehaviour
 
     void Update()
     {
+
         if(Time.time > spawnTime)
         {
             Spawn();
@@ -24,6 +24,7 @@ public class ObstacleAndEnemySpawn : MonoBehaviour
 
     void Spawn()
     {
+        //Find Random Variables for Spawning in Objects or enemies
         float randomX = Random.Range(minX,maxX);
         float randomY = Random.Range(minY, maxY);
 
@@ -31,6 +32,7 @@ public class ObstacleAndEnemySpawn : MonoBehaviour
         int randomIndex = Random.Range(0, obstacle.Count);
         GameObject obstacleToSpawn = obstacle[randomIndex];
 
+        //Creates the object
         Instantiate(obstacleToSpawn, transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
     }
 }
