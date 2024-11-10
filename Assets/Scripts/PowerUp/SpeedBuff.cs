@@ -15,7 +15,6 @@ public class Speed : PowerUpEffect
         if (speed != null)
         {
             speed.setSpeed(amount);
-            Debug.Log("Should increase the speed");
             ScoreManager.Instance.AddPoint(amount);
         }
         
