@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class HealthHeart : MonoBehaviour
 {
-    public Sprite fullHeart, halfHeart, emptyHeart;
+    public Sprite fullHeart, halfHeart, emptyHeart; //Getting Sprites
     Image heartImage;
 
     private void Awake()

@@ -1,17 +1,16 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HeartMahanger : MonoBehaviour
+public class HeartManger : MonoBehaviour
 {
     public GameObject heartPreFab;
-
     public HealthSystem playerHeart;
     List<HealthHeart> hearts = new List<HealthHeart>();
 
     private void Start()
     {
         DrawHearts();
+
     }
 
     public void CreateEmptyHeart()
@@ -20,16 +19,16 @@ public class HeartMahanger : MonoBehaviour
         newHeart.transform.SetParent(transform);        //Setting Parent
 
         HealthHeart heartComponent = newHeart.GetComponent<HealthHeart>();      
-        heartComponent.SetHeartImage(HeartStatus.Empty);    //  To be empty
-        hearts.Add(heartComponent); //To instatiate into list
+        heartComponent.SetHeartImage(HeartStatus.Empty);    //  To be empty every time
+        hearts.Add(heartComponent); //To add into list
     }
-
+   
     public void DrawHearts()
     {
         ClearHearts();
 
-        float maxHealthRemainder = playerHeart.maxHealth % 2;
-        int heartsToMake = (int)((playerHeart.maxHealth / 2) + maxHealthRemainder);
+        float maxHealthRemainder = playerHeart.maxHealth % 2; //Cehcking if max health is odd or even
+        int heartsToMake = Mathf.CeilToInt(playerHeart.maxHealth / 2f);
         for (int i = 0; i < heartsToMake; i++)
         {
             CreateEmptyHeart();
@@ -37,7 +36,8 @@ public class HeartMahanger : MonoBehaviour
 
         for(int i = 0; i< hearts.Count; i++)
         {
-            int heartStatusRemainder = (int)Mathf.Clamp(playerHeart.health - (i * 2), 0, 2);
+            int heartStatusRemainder = (int)Mathf.Clamp(playerHeart.health - (i * 2), 0, 2); //What is the heart satatus
+            Debug.Log("Heart " + i + " Status: " + (HeartStatus)heartStatusRemainder);
             hearts[i].SetHeartImage((HeartStatus)heartStatusRemainder);
         }
     }
