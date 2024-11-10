@@ -1,0 +1,55 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class HeartMahanger : MonoBehaviour
+{
+    public GameObject heartPreFab;
+
+    public HealthSystem playerHeart;
+    List<HealthHeart> hearts = new List<HealthHeart>();
+
+    private void Start()
+    {
+        DrawHearts();
+    }
+
+    public void CreateEmptyHeart()
+    {
+        GameObject newHeart = Instantiate(heartPreFab); //Instatiating Prefab
+        newHeart.transform.SetParent(transform);        //Setting Parent
+
+        HealthHeart heartComponent = newHeart.GetComponent<HealthHeart>();      
+        heartComponent.SetHeartImage(HeartStatus.Empty);    //  To be empty
+        hearts.Add(heartComponent); //To instatiate into list
+    }
+
+    public void DrawHearts()
+    {
+        ClearHearts();
+
+        float maxHealthRemainder = playerHeart.maxHealth % 2;
+        int heartsToMake = (int)((playerHeart.maxHealth / 2) + maxHealthRemainder);
+        for (int i = 0; i < heartsToMake; i++)
+        {
+            CreateEmptyHeart();
+        }
+
+        for(int i = 0; i< hearts.Count; i++)
+        {
+            int heartStatusRemainder = (int)Mathf.Clamp(playerHeart.health - (i * 2), 0, 2);
+            hearts[i].SetHeartImage((HeartStatus)heartStatusRemainder);
+        }
+    }
+
+    public void ClearHearts()
+    {
+        foreach (Transform t in transform)
+        {
+            Destroy(t.gameObject);
+        }
+        hearts = new List<HealthHeart>();
+    }
+
+    
+}
