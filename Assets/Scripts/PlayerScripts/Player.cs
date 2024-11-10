@@ -26,11 +26,12 @@ public class Player : MonoBehaviour
         float moveVertical = Input.GetAxis("Vertical");
 
         // Movement Getter
-        Vector3 movement = player.getSpeed() * Time.deltaTime * new Vector3(moveHorizontal, moveVertical, 0);
+        Vector2 movement = player.getSpeed() * Time.deltaTime * new Vector2(moveHorizontal, moveVertical);
 
         // Move the Character
         transform.Translate(movement);
 
+        //Finding the Boarder for the screen Vertical and Horizontal
         float clampedX = Mathf.Clamp(transform.position.x, -screenBounds.x + playerHalfWidth, screenBounds.x -playerHalfWidth);
         float clampedY = Mathf.Clamp(transform.position.y, -screenBounds.y + playerHalfHeight, screenBounds.y - playerHalfHeight);
         Vector2 pos = transform.position;   //Get players current position
