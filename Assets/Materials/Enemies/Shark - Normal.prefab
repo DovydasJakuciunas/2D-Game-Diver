@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d0d1eb96f88f71448f9d4dcee008018, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthSystem: {fileID: 2174347932447817973, guid: 7652409cee22e024eb02f76d6f51755e, type: 3}
   damage: 2
 --- !u!50 &-495414540923617196
 Rigidbody2D:

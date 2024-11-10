@@ -2,24 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthSystem : AttributeManager
+public class HealthSystem : MonoBehaviour
 {
-
+    public int health;
     [SerializeField]
-    private int maxHealth = 10;
+    protected int maxHealth = 10;
 
-    private void Start()
+    void Start()
     {
-        playerHealth = maxHealth;
+        Debug.Log("HealthActivate");
+        health = maxHealth;
     }
 
     public void TakeDamage(int amount)
     {
-        playerHealth -= amount;
-        Debug.Log("Player Damaged");
-        if (playerHealth < 0)
+        health -= amount;
+        Debug.Log("Player Damaged: "+ amount);
+        if (health < 0)
         {
-
             Destroy(gameObject);
         }
     }
