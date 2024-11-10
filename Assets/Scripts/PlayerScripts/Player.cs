@@ -4,7 +4,7 @@ public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
     [SerializeField]
-    private int speed = 5;
+    private PlayerMovement speed;
 
     //Boundery Finder
     private Vector2 screenBounds;
@@ -13,9 +13,10 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        speed = GetComponent<PlayerMovement>();
+
         // Finds out the Screen size       
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
-        
         playerHalfWidth = GetComponent<SpriteRenderer>().bounds.extents.x;
         playerHalfHeight = GetComponent<SpriteRenderer>().bounds.extents.y;
     }
@@ -27,7 +28,7 @@ public class Player : MonoBehaviour
         float moveVertical = Input.GetAxis("Vertical");
 
         // Movement Getter
-        Vector2 movement = speed * Time.deltaTime * new Vector2(moveHorizontal, moveVertical);
+        Vector2 movement = speed.getSpeed() * Time.deltaTime * new Vector2(moveHorizontal, moveVertical);
 
         // Move the Character
         transform.Translate(movement);

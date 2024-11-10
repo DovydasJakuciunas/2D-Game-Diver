@@ -28,13 +28,13 @@ public class EnemyFlyBy : AttributeManager
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log($"Initialized Enemy Type: {enemyType}, Speed: {sharedSpeed.GetSpeed(enemyType)}");
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log($"Initialized Enemy Type: {enemyType}, Speed: {sharedSpeed.GetSpeed(enemyType)}");
         speedSetter();
     }
 }

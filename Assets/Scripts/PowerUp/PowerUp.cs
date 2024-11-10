@@ -9,7 +9,7 @@ public class PowerUp : MonoBehaviour
         //Once the tag "Player" hits object its deleted
         if (collision.tag == "Player")
         {
-            Debug.Log("Hit the Player");
+            
             powerupEffect.Apply(collision.gameObject);
             Destroy(gameObject);
             
