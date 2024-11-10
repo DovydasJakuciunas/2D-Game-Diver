@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
 {
-    public int health = 10;
+    public int health;
     public int maxHealth = 10;
+
+    //For Health Bar to Work
 
     public void setMaxHealth(int amount)
     {

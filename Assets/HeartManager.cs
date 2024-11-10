@@ -28,7 +28,7 @@ public class HeartManger : MonoBehaviour
         ClearHearts();
 
         float maxHealthRemainder = playerHeart.maxHealth % 2; //Cehcking if max health is odd or even
-        int heartsToMake = Mathf.CeilToInt(playerHeart.maxHealth / 2f);
+        int heartsToMake = (int)((playerHeart.maxHealth / 2) + maxHealthRemainder);
         for (int i = 0; i < heartsToMake; i++)
         {
             CreateEmptyHeart();
@@ -37,7 +37,6 @@ public class HeartManger : MonoBehaviour
         for(int i = 0; i< hearts.Count; i++)
         {
             int heartStatusRemainder = (int)Mathf.Clamp(playerHeart.health - (i * 2), 0, 2); //What is the heart satatus
-            Debug.Log("Heart " + i + " Status: " + (HeartStatus)heartStatusRemainder);
             hearts[i].SetHeartImage((HeartStatus)heartStatusRemainder);
         }
     }
