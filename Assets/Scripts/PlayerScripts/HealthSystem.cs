@@ -5,15 +5,28 @@ using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
 {
-    public int health;
-    public int maxHealth = 10;
+    private int health;
+    private int maxHealth = 10;
 
     //For Health Bar to Work
     public static event Action OnPlayerDamaged;
+    public static event Action OnPlayerHeal;
 
-    public void setMaxHealth(int amount)
+    public  int getMaxHealth()
     {
-        maxHealth += amount;
+        return maxHealth;
+    }
+
+    public int getHealth()
+    {
+        return health;
+    }
+
+    public void Heal(int amount)
+    {
+
+        health += amount;
+        OnPlayerHeal?.Invoke();
     }
 
     void Awake()
