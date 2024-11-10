@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
 {
+    [SerializeField]
     private int health;
+    [SerializeField]
     private int maxHealth = 10;
 
     //For Health Bar to Work
@@ -24,9 +26,13 @@ public class HealthSystem : MonoBehaviour
 
     public void Heal(int amount)
     {
-
-        health += amount;
-        OnPlayerHeal?.Invoke();
+        if (health >= maxHealth){}
+        else
+        {
+            health += amount;
+            OnPlayerHeal?.Invoke();
+        }
+       
     }
 
     void Awake()
