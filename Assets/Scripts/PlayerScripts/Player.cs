@@ -5,6 +5,11 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
 
     AttributeManager player;
+
+   
+
+
+    //Boundery Finder
     private Vector2 screenBounds;
     private float playerHalfWidth;
     private float playerHalfHeight;

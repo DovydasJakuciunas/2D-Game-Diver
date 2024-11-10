@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class AttributeManager : MonoBehaviour
 {
-    [SerializeField]
-    protected int playerHealth;
+    
+    protected int playerHealth ;
 
     [SerializeField]
     protected int playerSpeed =5;
@@ -15,9 +15,6 @@ public class AttributeManager : MonoBehaviour
     }
     public int getSpeed() { return playerSpeed; }
 
-    public void TakeDamage(int damage)
-    {
-        playerHealth -= damage;
-    }
-
+    public int getHealth( ) { return playerHealth; }
+    public void setHealth(int health) { playerHealth = health; }
 }
