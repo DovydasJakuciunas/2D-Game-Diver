@@ -11,7 +11,7 @@ public class PowerUp : MonoBehaviour
         {
             powerupEffect.Apply(collision.gameObject);
             Destroy(gameObject);
-            ScoreManager.Instance.AddPoint();
+            
         }
        
     }

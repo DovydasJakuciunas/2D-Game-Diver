@@ -15,8 +15,12 @@ public class SlowDown : PowerUpEffect
         AttributeManager speed = target.GetComponent<AttributeManager>();
         if (speed != null)
         {
-            amount = Mathf.Abs(amount)* -1; //Make it so that its always negative
-            speed.setSpeed(amount);
+            if (speed.getSpeed() != 5){}
+            else
+            {
+                amount = Mathf.Abs(amount) * -1; //Make it so that its always negative
+                speed.setSpeed(amount);
+            }
         }
 
     }

@@ -14,6 +14,7 @@ public class Speed : PowerUpEffect
         if (speed != null)
         {
             speed.setSpeed(amount);
+            ScoreManager.Instance.AddPoint(amount);
         }
         
     }

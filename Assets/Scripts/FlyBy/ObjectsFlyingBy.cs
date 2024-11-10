@@ -5,14 +5,20 @@ public class ObjectsFlyingBy : MonoBehaviour
     
     [SerializeField]
     [Tooltip("This is the base speed for enemies. They get speed increased with score of the player")]
-    private float speedEnemy ;
+    private float speedEnemy;
 
     private float speed;
+
+    [SerializeField]
+    private SharedSpeed sharedSpeed;
+    private EnemyType enemyType;
     private void Start()
     {
         //Finding Random Variable for Speed
         speed = Random.Range(3.0f, 10.0f);
     }
+
+    
 
     void Update()
     {
@@ -31,7 +37,7 @@ public class ObjectsFlyingBy : MonoBehaviour
 
         if (tag == "Enemy")
         {
-            
+            speedEnemy = sharedSpeed.GetSpeed(enemyType);
             transform.position += speedEnemy * Time.deltaTime * Vector3.left;
 
             // Destroy if its Beyond This
@@ -41,4 +47,5 @@ public class ObjectsFlyingBy : MonoBehaviour
             }
         }
     }
+
 }
