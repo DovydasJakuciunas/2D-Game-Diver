@@ -7,6 +7,16 @@ public class HeartManger : MonoBehaviour
     public HealthSystem playerHeart;
     List<HealthHeart> hearts = new List<HealthHeart>();
 
+    private void OnEnable()
+    {
+        HealthSystem.OnPlayerDamaged += DrawHearts;
+    }
+
+    private void OnDisable()
+    {
+        HealthSystem.OnPlayerDamaged -= DrawHearts;
+    }
+
     private void Start()
     {
         DrawHearts();
