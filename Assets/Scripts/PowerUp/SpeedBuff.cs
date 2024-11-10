@@ -10,10 +10,11 @@ public class Speed : PowerUpEffect
     public override void Apply(GameObject target)
     {
         //Get things from attributeManager for speed and uses it
-       AttributeManager speed = target.GetComponent<AttributeManager>();
+       PlayerMovement speed = target.GetComponent<PlayerMovement>();
+        Debug.Log("Got to Speed Up");
         if (speed != null)
         {
-            speed.setSpeed(amount);
+            playerSpeed.setSpeed(amount);
             ScoreManager.Instance.AddPoint(amount);
         }
         

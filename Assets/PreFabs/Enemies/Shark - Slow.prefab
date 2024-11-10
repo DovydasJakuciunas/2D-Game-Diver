@@ -101,7 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedEnemy: 2.5
-  sharedSpeed: {fileID: 11400000, guid: 62cc3170dff072d4ab18f8996200f173, type: 2}
+  sharedSpeed: {fileID: 11400000, guid: bac9c6d72dd3d464b951eaf7498b4f9a, type: 2}
+  enemyType: 2
 --- !u!68 &-6372915064994719256
 EdgeCollider2D:
   m_ObjectHideFlags: 0

@@ -3,8 +3,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
-
-    AttributeManager player;
+    [SerializeField]
+    private int speed = 5;
 
     //Boundery Finder
     private Vector2 screenBounds;
@@ -13,7 +13,6 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        player = GetComponent<AttributeManager>();
         // Finds out the Screen size       
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
         
@@ -28,7 +27,7 @@ public class Player : MonoBehaviour
         float moveVertical = Input.GetAxis("Vertical");
 
         // Movement Getter
-        Vector2 movement = player.getSpeed() * Time.deltaTime * new Vector2(moveHorizontal, moveVertical);
+        Vector2 movement = speed * Time.deltaTime * new Vector2(moveHorizontal, moveVertical);
 
         // Move the Character
         transform.Translate(movement);
@@ -41,6 +40,7 @@ public class Player : MonoBehaviour
         pos.y = clampedY;
         transform.position = pos;   //Re-assign the clamped value back to the player
     }
+
 
     
 }

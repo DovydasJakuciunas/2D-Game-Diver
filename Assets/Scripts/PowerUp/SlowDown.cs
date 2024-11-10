@@ -12,14 +12,15 @@ public class SlowDown : PowerUpEffect
     public override void Apply(GameObject target)
     {
         //Get things from attributeManager for speed and uses it
-        AttributeManager speed = target.GetComponent<AttributeManager>();
+        PlayerMovement speed = target.GetComponent<PlayerMovement>();
+        Debug.Log("Got to Speed Down");
         if (speed != null)
         {
-            if (speed.getSpeed() != 5){}
+            if (playerSpeed.getSpeed() != 5){}
             else
             {
                 amount = Mathf.Abs(amount) * -1; //Make it so that its always negative
-                speed.setSpeed(amount);
+                playerSpeed.setSpeed(amount);
             }
         }
 

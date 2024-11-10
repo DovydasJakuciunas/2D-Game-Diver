@@ -508,6 +508,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1775828690}
   highscoreText: {fileID: 1659551578}
+  SharedSpeed: {fileID: 11400000, guid: 62cc3170dff072d4ab18f8996200f173, type: 2}
+  score: 0
+  highscore: 0
 --- !u!1 &294060016
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,7 +615,7 @@ MonoBehaviour:
   minX: 3
   maxY: 4.21
   minY: -4.08
-  timeBetweenSpawn: 2
+  timeBetweenSpawn: 3
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

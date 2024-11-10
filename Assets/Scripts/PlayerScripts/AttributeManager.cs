@@ -1,17 +1,7 @@
 using UnityEngine;
 
-public class AttributeManager : MonoBehaviour
+public abstract class AttributeManager : MonoBehaviour
 {
-    [SerializeField]
-    protected int playerSpeed =5;
-
-    public void setSpeed(int speed)
-    {
-        playerSpeed += speed;
-    }
-    public int getSpeed() { return playerSpeed; }
-
-    
-
+    public abstract void speedSetter();
 
 }
