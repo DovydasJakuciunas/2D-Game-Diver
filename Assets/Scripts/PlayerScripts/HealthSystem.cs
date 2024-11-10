@@ -10,14 +10,12 @@ public class HealthSystem : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("HealthActivate");
         health = maxHealth;
     }
 
     public void TakeDamage(int amount)
     {
-        health -= amount;
-        Debug.Log("Player Damaged: "+ amount);
+        health -= amount;  
         if (health < 0)
         {
             Destroy(gameObject);

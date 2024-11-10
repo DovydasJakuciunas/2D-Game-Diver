@@ -20,16 +20,26 @@ public class EnemyInteractions : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Hitting But not activating");
         //Once the tag "Player" Touches
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("TagGot");
             healthSystem.TakeDamage(damage);
 
         }
 
     }
 
-    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //Once the tag "Player" Touches
+        if (collision.gameObject.tag == "Player")
+        {
+            healthSystem.TakeDamage(damage);
+            Destroy(gameObject);
+
+        }
+
+    }
+
+
 }

@@ -6,9 +6,6 @@ public class Player : MonoBehaviour
 
     AttributeManager player;
 
-   
-
-
     //Boundery Finder
     private Vector2 screenBounds;
     private float playerHalfWidth;
@@ -17,7 +14,7 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         player = GetComponent<AttributeManager>();
-        //        
+        // Finds out the Screen size       
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
         
         playerHalfWidth = GetComponent<SpriteRenderer>().bounds.extents.x;
@@ -45,4 +42,5 @@ public class Player : MonoBehaviour
         transform.position = pos;   //Re-assign the clamped value back to the player
     }
 
+    
 }
