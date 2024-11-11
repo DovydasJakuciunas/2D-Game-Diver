@@ -22,6 +22,7 @@ public class EnemyInteractions : MonoBehaviour
         //Once the tag "Player" Touches
         if (collision.gameObject.tag == "Player")
         {
+            SoundManager.instance.PlaySound2D("Damage");
             healthSystem.TakeDamage(damage);
             Destroy(gameObject);
 

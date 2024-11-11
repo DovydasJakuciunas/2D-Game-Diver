@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Powerups/healing")]
@@ -13,7 +12,9 @@ public class HealthScript : PowerUpEffect
         HealthSystem healing = target.GetComponent<HealthSystem>();
         if (healing != null)
         {
+            SoundManager.instance.PlaySound2D("Heart");
             healing.Heal(amount);
+            
         }
 
     }

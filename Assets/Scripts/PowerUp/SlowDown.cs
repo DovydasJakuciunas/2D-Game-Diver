@@ -16,6 +16,7 @@ public class SlowDown : PowerUpEffect
             if (speed.getSpeed() <= 7){}
             else
             {
+                SoundManager.instance.PlaySound2D("Coin");
                 amount = Mathf.Abs(amount) * -1; //Make it so that its always negative
                 speed.setSpeed(amount);
             }
