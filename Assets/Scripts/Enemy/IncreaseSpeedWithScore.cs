@@ -27,7 +27,6 @@ public class IncreaseSpeedWithScore : MonoBehaviour
                 };
 
                 SharedSpeed.IncreaseSpeed(type, amount);
-                Debug.Log($"Increased {type} speed by {amount}");
             }
         }
     }
