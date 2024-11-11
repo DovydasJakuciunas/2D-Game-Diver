@@ -1,4 +1,6 @@
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [CreateAssetMenu(menuName = "Powerups/speedUp")]
 
@@ -17,7 +19,11 @@ public class Speed : PowerUpEffect
             if (speed.getSpeed() != 0)
             {
                 speed.setSpeed(amount);
-                ScoreManager.Instance.AddPoint(amount);
+                if(SceneManager.GetActiveScene().name != "MainMenu") //To make sure in main menu it doesnt count score
+                {
+                    ScoreManager.Instance.AddPoint(amount);
+                }
+                    
                 
             }
         }
