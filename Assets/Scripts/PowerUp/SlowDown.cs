@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Powerups/slowDown")]
@@ -7,22 +5,22 @@ using UnityEngine;
 public class SlowDown : PowerUpEffect
 {
     public int amount;
+    private PlayerMovement speed;
 
     //Overrides method to its own apply
     public override void Apply(GameObject target)
     {
-        //Get things from attributeManager for speed and uses it
-        PlayerMovement speed = target.GetComponent<PlayerMovement>();
-
-        if (speed != null)
+        if (target.CompareTag("Player"))
         {
-            if (speed.getSpeed() != 5){}
+            speed = target.GetComponent<PlayerMovement>();
+            if (speed.getSpeed() <= 7){}
             else
             {
-                Debug.Log("Slowiing");
                 amount = Mathf.Abs(amount) * -1; //Make it so that its always negative
-                playerSpeed.setSpeed(amount);
+                speed.setSpeed(amount);
             }
+
+            
         }
 
     }

@@ -17,11 +17,11 @@ public class SharedSpeed : ScriptableObject
         return enemySpeeds.ContainsKey(type) ? enemySpeeds[type] : 0.0f;
     }
 
-    public void IncreaseSpeed(EnemyType type, float increment)
+    public void IncreaseSpeed(EnemyType type, float amount)
     {
         if (enemySpeeds.ContainsKey(type))
         {
-            enemySpeeds[type] += increment;
+            enemySpeeds[type] += amount;
         }
     }
 }

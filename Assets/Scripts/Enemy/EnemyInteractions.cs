@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyInteractions : MonoBehaviour
@@ -16,17 +15,6 @@ public class EnemyInteractions : MonoBehaviour
         {
             healthSystem = player.GetComponent<HealthSystem>();
         }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        //Once the tag "Player" Touches
-        if (collision.gameObject.tag == "Player")
-        {
-            healthSystem.TakeDamage(damage);
-
-        }
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

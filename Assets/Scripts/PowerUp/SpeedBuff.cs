@@ -6,17 +6,22 @@ public class Speed : PowerUpEffect
 {
     public int amount;
 
-    //Overrides method to its own apply
+     PlayerMovement speed;
+
     public override void Apply(GameObject target)
     {
+        speed = target.GetComponent<PlayerMovement>();
         //Get things from attributeManager for speed and uses it
-       PlayerMovement speed = target.GetComponent<PlayerMovement>();
-
-        if (speed != null)
+        if (target.CompareTag("Player"))
         {
-            speed.setSpeed(amount);
-            ScoreManager.Instance.AddPoint(amount);
+            if (speed.getSpeed() != 0)
+            {
+                speed.setSpeed(amount);
+                ScoreManager.Instance.AddPoint(amount);
+                
+            }
         }
+        
         
     }
 }

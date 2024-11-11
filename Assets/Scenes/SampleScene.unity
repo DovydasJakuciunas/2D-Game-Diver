@@ -508,7 +508,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1775828690}
   highscoreText: {fileID: 1659551578}
-  SharedSpeed: {fileID: 11400000, guid: 62cc3170dff072d4ab18f8996200f173, type: 2}
   score: 0
   highscore: 0
 --- !u!1 &294060016
@@ -844,7 +843,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2174347932447817973, guid: 7652409cee22e024eb02f76d6f51755e, type: 3}
   m_PrefabInstance: {fileID: 1857813882}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2045087644}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6cc638307d5ec734898c1f99f7653619, type: 3}
@@ -1134,6 +1133,10 @@ PrefabInstance:
       propertyPath: health
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5710629314480217484, guid: 7652409cee22e024eb02f76d6f51755e, type: 3}
+      propertyPath: speed
+      value: 
+      objectReference: {fileID: 2045087651}
     - target: {fileID: 8201910237195621927, guid: 7652409cee22e024eb02f76d6f51755e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.23
@@ -1177,7 +1180,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1692371560265927639, guid: 7652409cee22e024eb02f76d6f51755e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2045087651}
   m_SourcePrefab: {fileID: 100100000, guid: 7652409cee22e024eb02f76d6f51755e, type: 3}
 --- !u!1 &1993528628
 GameObject:
@@ -1232,6 +1238,24 @@ MonoBehaviour:
   maxY: 4.21
   minY: -4.08
   timeBetweenSpawn: 0.6
+--- !u!1 &2045087644 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1692371560265927639, guid: 7652409cee22e024eb02f76d6f51755e, type: 3}
+  m_PrefabInstance: {fileID: 1857813882}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2045087651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045087644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884691198496b4545bbc038898c55a4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSpeed: 5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

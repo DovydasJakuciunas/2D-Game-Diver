@@ -3,14 +3,14 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
+    //All About the Score
     public static ScoreManager Instance;
-
     public TMP_Text scoreText;
     public TMP_Text highscoreText;
-    public SharedSpeed SharedSpeed;
-
     public int score = 0;
     public int highscore = 0;
+
+
 
     private void Awake()
     {
@@ -34,16 +34,6 @@ public class ScoreManager : MonoBehaviour
             PlayerPrefs.SetInt("highscore", score);
         }
 
-        foreach (EnemyType type in System.Enum.GetValues(typeof(EnemyType)))
-        {
-            float increment = type switch
-            {
-                EnemyType.FAST => 0.1f,
-                EnemyType.NORMAL => 0.5f,
-                EnemyType.SLOW => 0.2f,
-                _ => 0f
-            };
-            SharedSpeed.IncreaseSpeed(type, increment);
-        }     
+           
     }
 }

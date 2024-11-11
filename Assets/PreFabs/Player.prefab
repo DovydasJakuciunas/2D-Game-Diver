@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 8201910237195621927}
   - component: {fileID: 4915416343536577341}
   - component: {fileID: 9137808175981095820}
-  - component: {fileID: 5710629314480217484}
   - component: {fileID: 795043524914432569}
   - component: {fileID: 7150347639455220503}
   - component: {fileID: 2174347932447817973}
+  - component: {fileID: 2558492117847816890}
+  - component: {fileID: 7839954401656466361}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -110,19 +111,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5710629314480217484
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1692371560265927639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 180ed18d343d5e64798ce63c485be215, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
 --- !u!70 &795043524914432569
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -199,3 +187,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 10
+--- !u!114 &2558492117847816890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692371560265927639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884691198496b4545bbc038898c55a4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSpeed: 5
+--- !u!114 &7839954401656466361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692371560265927639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ed18d343d5e64798ce63c485be215, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: {fileID: 2558492117847816890}

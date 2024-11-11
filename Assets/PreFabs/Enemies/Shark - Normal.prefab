@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -3071727006052285587}
   - component: {fileID: 1501247490092822914}
   - component: {fileID: -4757500776456876990}
+  - component: {fileID: -885572506216029159}
   m_Layer: 0
   m_Name: Shark - Normal
   m_TagString: Enemy
@@ -196,5 +197,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedEnemy: 3
-  sharedSpeed: {fileID: 11400000, guid: 972f1450ff1a3fd48b83dda3515f5c5b, type: 2}
+  sharedSpeed: {fileID: 11400000, guid: 62cc3170dff072d4ab18f8996200f173, type: 2}
   enemyType: 1
+--- !u!114 &-885572506216029159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4654947534357260285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b53d0f7d5999bab4091bc1f042fb4e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SharedSpeed: {fileID: 11400000, guid: 62cc3170dff072d4ab18f8996200f173, type: 2}
