@@ -664,7 +664,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 182863f97fa475340b5f9d42f38ee134, type: 3}
     - {fileID: 8300000, guid: 16cb14c39ddf9e24ab73e6806fb6ec8e, type: 3}
     - {fileID: 8300000, guid: dab57e9397bef6e40b9d1fa55f16383c, type: 3}
-  - groupID: Coin
+  - groupID: Score
     clips:
     - {fileID: 8300000, guid: 655b0ea2fdb4a8e4ba4a2ef73681476d, type: 3}
   - groupID: Heart

@@ -6,12 +6,12 @@ public class MainMenu : MonoBehaviour
 
     public void Start()
     {
-        MusicManager.Instance.PlayMusic("MainMenu");
+        MusicManager.Instance.PlayMusic("Main Menu");
     }
     public void Play()
     {
         SceneManager.LoadScene("Playing");
-        MusicManager.Instance.PlayMusic("Playing");
+        MusicManager.Instance.PlayMusic("MainMenu");
     }
 
     public void Quit()

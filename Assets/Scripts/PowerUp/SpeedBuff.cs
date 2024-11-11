@@ -18,7 +18,7 @@ public class Speed : PowerUpEffect
         {
             if (speed.getSpeed() != 0)
             {
-                SoundManager.instance.PlaySound2D("Coin");
+                SoundManager.instance.PlaySound2D("Score");
                 speed.setSpeed(amount);
                 if(SceneManager.GetActiveScene().name != "MainMenu") //To make sure in main menu it doesnt count score
                 {

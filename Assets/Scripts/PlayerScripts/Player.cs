@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
         playerHalfWidth = GetComponent<SpriteRenderer>().bounds.extents.x;
         playerHalfHeight = GetComponent<SpriteRenderer>().bounds.extents.y;
+
+        MusicManager.Instance.PlayMusic("Playing");
     }
 
     void Update()
