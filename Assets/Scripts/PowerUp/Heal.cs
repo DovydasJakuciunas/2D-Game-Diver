@@ -8,11 +8,12 @@ public class HealthScript : PowerUpEffect
     //Overrides method to its own apply
     public override void Apply(GameObject target)
     {
+        SoundManager.Instance.PlaySound2D("Heart");
+
         //Get things from attributeManager for speed and uses it
         HealthSystem healing = target.GetComponent<HealthSystem>();
         if (healing != null)
         {
-            SoundManager.instance.PlaySound2D("Heart");
             healing.Heal(amount);
             
         }

@@ -10,6 +10,9 @@ public class Player : MonoBehaviour
     private Vector2 screenBounds;
     private float playerHalfWidth;
     private float playerHalfHeight;
+
+    
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();

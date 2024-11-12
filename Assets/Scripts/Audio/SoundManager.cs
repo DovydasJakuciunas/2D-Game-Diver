@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
 
-    public static SoundManager instance;
+    public static SoundManager Instance;
 
     [SerializeField]
     private SoundLibrary sfxLibrary;
@@ -14,30 +12,15 @@ public class SoundManager : MonoBehaviour
 
     private void Awake()
     {
-        if(instance != null)
+        if (Instance != null)
         {
             Destroy(gameObject);
         }
         else
         {
-            instance = this;
+            Instance = this;
             DontDestroyOnLoad(gameObject);
         }
-    }
-
-    //3D Methods for main menu and music
-
-    public void PlaySound3D(AudioClip clip, Vector3 pos)
-    {
-        if(clip != null)
-        {
-            AudioSource.PlayClipAtPoint(clip, pos);
-        }
-    }
-
-    public void PlaySound3D(string soundName, Vector3 pos)
-    {
-        PlaySound3D(sfxLibrary.GetClipFromName(soundName), pos);
     }
 
     //Any UI eg Healing or Damage

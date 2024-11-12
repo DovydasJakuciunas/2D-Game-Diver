@@ -14,6 +14,8 @@ public class HealthSystem : MonoBehaviour
     public static event Action OnPlayerDamaged;
     public static event Action OnPlayerHeal;
 
+    public GameOverScreen gameOverScreen;
+
     public  int getMaxHealth()
     {
         return maxHealth;
@@ -48,7 +50,9 @@ public class HealthSystem : MonoBehaviour
         OnPlayerDamaged?.Invoke();
         if (health <= 0)
         {
+            gameOverScreen.Setup();
             Destroy(gameObject);
+            
         }
     }
 
